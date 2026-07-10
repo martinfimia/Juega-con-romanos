@@ -15,9 +15,9 @@
   <header class="site-header">
     <a class="brand" href="#inicio" aria-label="RomaNum, inicio"><span class="brand-mark">R</span><span>Roma<span>Num</span></span></a>
     <nav aria-label="Navegación principal">
-      <a href="#aprender">Aprender</a><a href="#practicar">Practicar</a><a href="#reto">Reto</a>
+      <a href="#niveles">Niveles</a><a href="#aprender">Aprender</a><a href="#practicar">Practicar</a><a href="#grupo">En grupo</a>
     </nav>
-    <button class="sound-button" id="sound-toggle" aria-pressed="true" aria-label="Desactivar sonidos">♪ <span>Sonido</span></button>
+    <button class="profile-pill" id="profile-button" aria-label="Cambiar perfil"><span id="profile-avatar">?</span><b id="profile-name">Elegir perfil</b></button>
   </header>
 
   <main>
@@ -26,7 +26,7 @@
         <span class="eyebrow">⚡ Una aventura por la antigua Roma</span>
         <h1>Descifra el código<br>de los <em>romanos</em></h1>
         <p>Aprende a leer y escribir números romanos con trucos sencillos, ejemplos y desafíos hechos para ti.</p>
-        <div class="hero-actions"><a class="button primary" href="#aprender">Empezar la aventura →</a><a class="button ghost" href="#practicar">Probar un reto</a></div>
+        <div class="hero-actions"><a class="button primary" href="#niveles">Ver mis niveles →</a><a class="button ghost" href="#grupo">Jugar en grupo</a></div>
         <div class="hero-stats"><span><strong id="hero-stars">0</strong> estrellas ganadas</span><span><strong id="hero-streak">0</strong> mejor racha</span></div>
       </div>
       <div class="hero-art" aria-label="Ilustración de un templo romano con el número 2025 en números romanos">
@@ -34,6 +34,13 @@
         <div class="laurel left">❧</div><div class="laurel right">❧</div>
         <div class="temple"><div class="pediment"><span>MMXXV</span></div><div class="columns"><i></i><i></i><i></i><i></i></div><div class="steps"></div></div>
       </div>
+    </section>
+
+    <section class="section levels" id="niveles">
+      <div class="section-heading"><div><span class="kicker">TU CAMINO POR ROMA</span><h2>30 niveles para convertirte en maestro</h2></div><p>Cada mundo introduce símbolos y reglas nuevas. Supera 4 de 5 preguntas para desbloquear el siguiente nivel.</p></div>
+      <div class="world-tabs" id="world-tabs" role="tablist" aria-label="Mundos de aprendizaje"></div>
+      <div class="level-map" id="level-map" aria-live="polite"></div>
+      <div class="level-legend"><span>● Disponible</span><span>★ Completado</span><span>🔒 Bloqueado</span></div>
     </section>
 
     <section class="section learn" id="aprender">
@@ -49,10 +56,19 @@
       <div class="section-heading centered"><div><span class="kicker">ENTRENA COMO UN LEGIONARIO</span><h2>¿Qué número es?</h2></div><p>Convierte el número romano. Si necesitas ayuda, usa una pista.</p></div>
       <div class="game-card">
         <div class="game-top"><span id="question-count">Pregunta 1 de 10</span><div class="progress-track"><i id="progress-bar"></i></div><span class="streak" id="streak-label">🔥 0</span></div>
-        <div class="prompt"><span id="roman-prompt">XIV</span><small>EN NÚMEROS NORMALES</small></div>
+        <div class="prompt"><span class="roman-tiles" id="roman-prompt" aria-label="X I V"><i>X</i><i>I</i><i>V</i></span><small>EN NÚMEROS NORMALES</small></div>
         <div class="answer-grid" id="answer-grid"></div>
         <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
         <div class="game-footer"><button class="text-button" id="hint-button">💡 Dame una pista</button><button class="button primary" id="next-button" disabled>Siguiente →</button></div>
+      </div>
+    </section>
+
+    <section class="section group" id="grupo">
+      <div class="section-heading"><div><span class="kicker">MODO GRUPO</span><h2>Una partida, varios jugadores</h2></div><p>Jugad por turnos en el mismo dispositivo. Elegid de 2 a 6 participantes y comprobad quién conquista más estrellas.</p></div>
+      <div class="group-layout">
+        <div class="group-setup" id="group-setup"><h3>¿Quién juega?</h3><div id="player-fields"></div><div class="group-controls"><button class="text-button" id="add-player">＋ Añadir jugador</button><button class="button primary" id="start-group">Comenzar partida</button></div></div>
+        <div class="group-game" id="group-game" hidden><div class="turn-label">TURNO DE <strong id="turn-name"></strong></div><div class="roman-tiles group-roman" id="group-roman"></div><p>¿Qué número representa?</p><div class="group-answer-row"><input id="group-answer" type="number" inputmode="numeric" aria-label="Respuesta del jugador"><button class="button primary" id="group-submit">Responder</button></div><div id="group-feedback" class="feedback" role="status"></div></div>
+        <aside class="scoreboard"><h3>Marcador</h3><div id="score-list"><p>Añade jugadores para empezar.</p></div><button class="text-button" id="reset-group" hidden>Nueva partida</button></aside>
       </div>
     </section>
 
@@ -64,7 +80,8 @@
     </section>
   </main>
 
-  <footer><a class="brand" href="#inicio"><span class="brand-mark">R</span><span>Roma<span>Num</span></span></a><p>Hecho con curiosidad para pequeños grandes pensadores.</p><button id="reset-progress" class="text-button">Reiniciar progreso</button></footer>
+  <footer><a class="brand" href="#inicio"><span class="brand-mark">R</span><span>Roma<span>Num</span></span></a><p>Hecho con curiosidad para pequeños grandes pensadores.</p><div><button id="sound-toggle" class="text-button" aria-pressed="true">♪ Sonido</button><button id="reset-progress" class="text-button">Reiniciar progreso</button></div></footer>
+  <dialog id="profile-dialog"><form method="dialog"><div class="dialog-head"><div><span class="kicker">¿QUIÉN JUEGA?</span><h2>Elige tu perfil</h2></div><button value="cancel" aria-label="Cerrar">×</button></div><div id="profile-list" class="profile-list"></div><div class="new-profile"><input id="new-profile-name" maxlength="14" placeholder="Nombre del nuevo perfil" aria-label="Nombre del nuevo perfil"><button type="button" class="button primary" id="create-profile">Crear perfil</button></div></form></dialog>
   <script src="app.js"></script>
 </body>
 </html>
