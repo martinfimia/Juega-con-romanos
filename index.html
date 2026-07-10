@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aprende números romanos jugando: lecciones, retos y práctica para niños y niñas de 9 años en adelante.">
+  <title>RomaNum — Aprende números romanos jugando</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#aprender">Saltar al contenido</a>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="RomaNum, inicio"><span class="brand-mark">R</span><span>Roma<span>Num</span></span></a>
+    <nav aria-label="Navegación principal">
+      <a href="#aprender">Aprender</a><a href="#practicar">Practicar</a><a href="#reto">Reto</a>
+    </nav>
+    <button class="sound-button" id="sound-toggle" aria-pressed="true" aria-label="Desactivar sonidos">♪ <span>Sonido</span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <span class="eyebrow">⚡ Una aventura por la antigua Roma</span>
+        <h1>Descifra el código<br>de los <em>romanos</em></h1>
+        <p>Aprende a leer y escribir números romanos con trucos sencillos, ejemplos y desafíos hechos para ti.</p>
+        <div class="hero-actions"><a class="button primary" href="#aprender">Empezar la aventura →</a><a class="button ghost" href="#practicar">Probar un reto</a></div>
+        <div class="hero-stats"><span><strong id="hero-stars">0</strong> estrellas ganadas</span><span><strong id="hero-streak">0</strong> mejor racha</span></div>
+      </div>
+      <div class="hero-art" aria-label="Ilustración de un templo romano con el número 2025 en números romanos">
+        <div class="sun"></div><div class="cloud one"></div><div class="cloud two"></div>
+        <div class="laurel left">❧</div><div class="laurel right">❧</div>
+        <div class="temple"><div class="pediment"><span>MMXXV</span></div><div class="columns"><i></i><i></i><i></i><i></i></div><div class="steps"></div></div>
+      </div>
+    </section>
+
+    <section class="section learn" id="aprender">
+      <div class="section-heading"><div><span class="kicker">LAS CLAVES DEL CÓDIGO</span><h2>Siete símbolos, infinitas historias</h2></div><p>Estos son los únicos símbolos que necesitas. Toca cada tarjeta para descubrir un dato curioso.</p></div>
+      <div class="symbol-grid" id="symbol-grid"></div>
+      <div class="rule-card">
+        <div class="rule-visual"><span class="big-roman">IV</span><span class="equals">=</span><span class="math">5 − 1 = <b>4</b></span></div>
+        <div><span class="kicker">EL TRUCO MÁS IMPORTANTE</span><h3>Si el pequeño va delante, ¡se resta!</h3><p>Cuando un símbolo menor aparece antes de uno mayor, lo restamos. Por eso <b>IV</b> es 4 y <b>IX</b> es 9.</p><div class="examples"><span>IX = 10 − 1 = <b>9</b></span><span>XL = 50 − 10 = <b>40</b></span><span>CM = 1000 − 100 = <b>900</b></span></div></div>
+      </div>
+    </section>
+
+    <section class="section practice" id="practicar">
+      <div class="section-heading centered"><div><span class="kicker">ENTRENA COMO UN LEGIONARIO</span><h2>¿Qué número es?</h2></div><p>Convierte el número romano. Si necesitas ayuda, usa una pista.</p></div>
+      <div class="game-card">
+        <div class="game-top"><span id="question-count">Pregunta 1 de 10</span><div class="progress-track"><i id="progress-bar"></i></div><span class="streak" id="streak-label">🔥 0</span></div>
+        <div class="prompt"><span id="roman-prompt">XIV</span><small>EN NÚMEROS NORMALES</small></div>
+        <div class="answer-grid" id="answer-grid"></div>
+        <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+        <div class="game-footer"><button class="text-button" id="hint-button">💡 Dame una pista</button><button class="button primary" id="next-button" disabled>Siguiente →</button></div>
+      </div>
+    </section>
+
+    <section class="section challenge" id="reto">
+      <div class="challenge-copy"><span class="kicker">RETO RELÁMPAGO</span><h2>60 segundos.<br>¿Cuántos puedes resolver?</h2><p>Responde tantos como puedas antes de que se acabe el tiempo. Cada acierto suma una estrella.</p><button class="button light" id="start-challenge">Empezar reto ⚡</button></div>
+      <div class="timer-card">
+        <div class="timer" id="timer">60</div><span>SEGUNDOS</span><div class="challenge-question" id="challenge-question">Pulsa empezar</div><input id="challenge-answer" type="number" inputmode="numeric" aria-label="Respuesta del reto" placeholder="Tu respuesta" disabled><button id="challenge-submit" class="mini-button" disabled>Comprobar</button><p id="challenge-score">0 aciertos</p>
+      </div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#inicio"><span class="brand-mark">R</span><span>Roma<span>Num</span></span></a><p>Hecho con curiosidad para pequeños grandes pensadores.</p><button id="reset-progress" class="text-button">Reiniciar progreso</button></footer>
+  <script src="app.js"></script>
+</body>
+</html>
