@@ -2,86 +2,45 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Aprende números romanos jugando: lecciones, retos y práctica para niños y niñas de 9 años en adelante.">
-  <title>RomaNum — Aprende números romanos jugando</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Aula Play: juegos educativos para aprender jugando.">
+  <title>Aula Play — Aprender también puede ser un juego</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <a class="skip-link" href="#aprender">Saltar al contenido</a>
-  <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="RomaNum, inicio"><span class="brand-mark">R</span><span>Roma<span>Num</span></span></a>
-    <nav aria-label="Navegación principal">
-      <a href="#niveles">Niveles</a><a href="#aprender">Aprender</a><a href="#practicar">Practicar</a><a href="#grupo">En grupo</a>
-    </nav>
-    <button class="profile-pill" id="profile-button" aria-label="Cambiar perfil"><span id="profile-avatar">?</span><b id="profile-name">Elegir perfil</b></button>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header class="topbar">
+    <button class="brand" data-go="home" aria-label="Volver al inicio"><span>AP</span>Aula Play</button>
+    <nav aria-label="Navegación principal"><button data-go="home">Inicio</button><button id="sound-toggle" aria-pressed="true">♪ Sonido</button></nav>
   </header>
 
-  <main>
-    <section class="hero" id="inicio">
-      <div class="hero-copy">
-        <span class="eyebrow">⚡ Una aventura por la antigua Roma</span>
-        <h1>Descifra el código<br>de los <em>romanos</em></h1>
-        <p>Aprende a leer y escribir números romanos con trucos sencillos, ejemplos y desafíos hechos para ti.</p>
-        <div class="hero-actions"><a class="button primary" href="#niveles">Ver mis niveles →</a><a class="button ghost" href="#grupo">Jugar en grupo</a></div>
-        <div class="hero-stats"><span><strong id="hero-stars">0</strong> estrellas ganadas</span><span><strong id="hero-streak">0</strong> mejor racha</span></div>
+  <main id="contenido">
+    <section class="view home-view active" id="home" aria-labelledby="home-title">
+      <div class="home-hero"><span class="pill">APRENDER · JUGAR · CRECER</span><h1 id="home-title">Aula <em>Play</em></h1><p>Aprender también puede ser un juego</p></div>
+      <div class="module-grid">
+        <article class="module-card roman-card"><div class="module-art"><span>Ⅹ</span><span>Ⅴ</span><span>Ⅰ</span></div><div class="module-body"><span class="age">A partir de 9 años</span><h2>Números romanos</h2><p>Aprende, practica y domina los números romanos.</p><button class="primary" data-go="romanos">Entrar al juego →</button></div></article>
+        <article class="module-card reading-card"><div class="module-art"><span>🍐</span><span>🦆</span><span>✋</span></div><div class="module-body"><span class="age">A partir de 5 años</span><h2>Aprende a leer</h2><p>Mira, escucha y encuentra la palabra correcta.</p><button class="primary" data-go="lectura">Empezar a leer →</button></div></article>
       </div>
-      <div class="hero-art" aria-label="Ilustración de un templo romano con el número 2026 en números romanos">
-        <div class="sun"></div><div class="cloud one"></div><div class="cloud two"></div>
-        <div class="laurel left">❧</div><div class="laurel right">❧</div>
-        <div class="temple"><div class="pediment"><span>MMXXVI</span></div><div class="columns"><i></i><i></i><i></i><i></i></div><div class="steps"></div></div>
-      </div>
+      <p class="privacy-note">Sin anuncios · Sin registro · El progreso se guarda en este dispositivo</p>
     </section>
 
-    <section class="section levels" id="niveles">
-      <div class="section-heading"><div><span class="kicker">TU CAMINO POR ROMA</span><h2>Empieza con I, V y X</h2></div><p>Los diez primeros niveles utilizan solamente estos tres símbolos. Supera 4 de 5 preguntas para avanzar; después podrás descubrir nuevos símbolos.</p></div>
-      <div class="world-tabs" id="world-tabs" role="tablist" aria-label="Mundos de aprendizaje"></div>
-      <div class="level-map" id="level-map" aria-live="polite"></div>
-      <div class="level-legend"><span>● Disponible</span><span>★ Completado</span><span>🔒 Bloqueado</span></div>
+    <section class="view module-view" id="romanos" aria-labelledby="roman-title" hidden>
+      <div class="module-header roman"><button class="back" data-go="home">← Aula Play</button><div><span class="pill">NÚMEROS ROMANOS</span><h1 id="roman-title">La aventura de Roma</h1><p>Aprende los símbolos, practica conversiones y supera retos.</p></div><div class="profile-box"><label for="roman-profile">Perfil</label><select id="roman-profile"></select><button id="add-profile">＋</button></div></div>
+      <nav class="subnav" aria-label="Secciones de números romanos"><a href="#roman-lessons">Aprender</a><a href="#roman-practice">Practicar</a><a href="#roman-challenge">Reto</a><a href="#roman-group">Grupo</a></nav>
+      <section class="module-section" id="roman-lessons"><div class="section-title"><span class="eyebrow">LECCIONES INTERACTIVAS</span><h2>Siete símbolos, un gran código</h2></div><div class="symbol-grid" id="roman-symbols"></div><div class="rule-box"><strong>Regla de resta</strong><span class="roman-sample">IV = 5 − 1 = 4</span><p>Si un símbolo pequeño va delante de uno mayor, se resta. También ocurre en IX, XL, XC, CD y CM.</p></div></section>
+      <section class="module-section soft" id="roman-practice"><div class="section-title"><span class="eyebrow">PRÁCTICA</span><h2>Convierte y conquista estrellas</h2><p id="roman-stats">0 estrellas · Mejor racha: 0</p></div><div class="game-panel"><div class="game-meta"><span id="roman-direction">ROMANO → NÚMERO</span><span id="roman-streak">🔥 0</span></div><div class="roman-prompt" id="roman-prompt"></div><p class="question-label" id="roman-question-label">¿Qué número es?</p><div class="choice-grid" id="roman-choices"></div><div class="feedback" id="roman-feedback" role="status" aria-live="polite"></div><div class="game-actions"><button class="secondary" id="roman-hint">💡 Pista</button><button class="primary" id="roman-next" disabled>Siguiente →</button></div></div></section>
+      <section class="module-section split" id="roman-challenge"><div><span class="eyebrow">RETO RELÁMPAGO</span><h2>60 segundos</h2><p>Convierte tantos números como puedas antes de que termine el tiempo.</p><button class="primary" id="challenge-start">Empezar reto ⚡</button></div><div class="timer-panel"><strong id="challenge-time">60</strong><span>segundos</span><div id="challenge-prompt">Pulsa empezar</div><input id="challenge-input" type="text" autocomplete="off" aria-label="Respuesta del reto" disabled><button id="challenge-check" class="primary" disabled>Comprobar</button><p id="challenge-score">0 aciertos</p></div></section>
+      <section class="module-section soft" id="roman-group"><div class="section-title"><span class="eyebrow">JUEGO EN GRUPO</span><h2>Turnos de 2 a 6 jugadores</h2></div><div class="group-grid"><div class="group-setup" id="group-setup"><div id="group-names"></div><button class="secondary" id="group-add">＋ Jugador</button><button class="primary" id="group-start">Comenzar</button></div><div class="group-play" id="group-play" hidden><p>Turno de <strong id="group-turn"></strong></p><div class="roman-prompt" id="group-prompt"></div><input id="group-input" type="number" inputmode="numeric" aria-label="Respuesta del jugador"><button class="primary" id="group-check">Responder</button><div id="group-feedback" class="feedback" role="status"></div></div><aside><h3>Marcador</h3><div id="group-score">Añade jugadores para empezar.</div><button class="secondary" id="group-reset" hidden>Nueva partida</button></aside></div></section>
     </section>
 
-    <section class="section learn" id="aprender">
-      <div class="section-heading"><div><span class="kicker">LAS CLAVES DEL CÓDIGO</span><h2>Empezamos con tres símbolos</h2></div><p>Primero dominarás I, V y X. Los demás aparecerán cuando completes este recorrido inicial.</p></div>
-      <div class="symbol-grid" id="symbol-grid"></div>
-      <div class="rule-card">
-        <div class="rule-visual"><span class="big-roman">IV</span><span class="equals">=</span><span class="math">5 − 1 = <b>4</b></span></div>
-        <div><span class="kicker">EL TRUCO MÁS IMPORTANTE</span><h3>Si el pequeño va delante, ¡se resta!</h3><p>Cuando un símbolo menor aparece antes de uno mayor, lo restamos. Por eso <b>IV</b> es 4 y <b>IX</b> es 9.</p><div class="examples"><span>IX = 10 − 1 = <b>9</b></span><span>XL = 50 − 10 = <b>40</b></span><span>CM = 1000 − 100 = <b>900</b></span></div></div>
-      </div>
-    </section>
-
-    <section class="section practice" id="practicar">
-      <div class="section-heading centered"><div><span class="kicker">ENTRENA COMO UN LEGIONARIO</span><h2>¿Qué número es?</h2></div><p>Convierte el número romano. Si necesitas ayuda, usa una pista.</p></div>
-      <div class="game-card">
-        <div class="game-top"><span id="question-count">Pregunta 1 de 10</span><div class="progress-track"><i id="progress-bar"></i></div><span class="streak" id="streak-label">🔥 0</span></div>
-        <div class="prompt"><span class="roman-tiles" id="roman-prompt" aria-label="X I V"><i>X</i><i>I</i><i>V</i></span><small>EN NÚMEROS NORMALES</small></div>
-        <div class="answer-grid" id="answer-grid"></div>
-        <div class="feedback" id="feedback" role="status" aria-live="polite"></div>
-        <div class="game-footer"><button class="text-button" id="hint-button">💡 Dame una pista</button><button class="button primary" id="next-button" disabled>Siguiente →</button></div>
-      </div>
-    </section>
-
-    <section class="section group" id="grupo">
-      <div class="section-heading"><div><span class="kicker">MODO GRUPO</span><h2>Una partida, varios jugadores</h2></div><p>Jugad por turnos en el mismo dispositivo. Elegid de 2 a 6 participantes y comprobad quién conquista más estrellas.</p></div>
-      <div class="group-layout">
-        <div class="group-setup" id="group-setup"><h3>¿Quién juega?</h3><div id="player-fields"></div><div class="group-controls"><button class="text-button" id="add-player">＋ Añadir jugador</button><button class="button primary" id="start-group">Comenzar partida</button></div></div>
-        <div class="group-game" id="group-game" hidden><div class="turn-label">TURNO DE <strong id="turn-name"></strong></div><div class="roman-tiles group-roman" id="group-roman"></div><p>¿Qué número representa?</p><div class="group-answer-row"><input id="group-answer" type="number" inputmode="numeric" aria-label="Respuesta del jugador"><button class="button primary" id="group-submit">Responder</button></div><div id="group-feedback" class="feedback" role="status"></div></div>
-        <aside class="scoreboard"><h3>Marcador</h3><div id="score-list"><p>Añade jugadores para empezar.</p></div><button class="text-button" id="reset-group" hidden>Nueva partida</button></aside>
-      </div>
-    </section>
-
-    <section class="section challenge" id="reto">
-      <div class="challenge-copy"><span class="kicker">RETO RELÁMPAGO</span><h2>60 segundos.<br>¿Cuántos puedes resolver?</h2><p>Responde tantos como puedas antes de que se acabe el tiempo. Cada acierto suma una estrella.</p><button class="button light" id="start-challenge">Empezar reto ⚡</button></div>
-      <div class="timer-card">
-        <div class="timer" id="timer">60</div><span>SEGUNDOS</span><div class="challenge-question" id="challenge-question">Pulsa empezar</div><input id="challenge-answer" type="number" inputmode="numeric" aria-label="Respuesta del reto" placeholder="Tu respuesta" disabled><button id="challenge-submit" class="mini-button" disabled>Comprobar</button><p id="challenge-score">0 aciertos</p>
-      </div>
+    <section class="view module-view reading-module" id="lectura" aria-labelledby="reading-title" hidden>
+      <div class="module-header reading"><button class="back" data-go="home">← Aula Play</button><div><span class="pill">APRENDE A LEER</span><h1 id="reading-title">¿Qué ves?</h1><p>Mira el dibujo y toca su palabra.</p></div><div class="reading-stats"><span>✓ <b id="reading-hits">0</b></span><span>🔥 <b id="reading-streak">0</b></span></div></div>
+      <section class="reading-game" aria-label="Juego de lectura"><div class="picture-card" id="reading-picture" role="img"></div><button class="listen-button" id="reading-listen" aria-label="Escuchar la palabra">🔊 Escuchar</button><div class="word-grid" id="reading-choices"></div><div class="reading-feedback" id="reading-feedback" role="status" aria-live="assertive">Elige una palabra</div><button class="primary big" id="reading-next" hidden>Siguiente →</button></section>
+      <div class="reading-progress"><span id="reading-attempts">0 intentos</span><button class="secondary" id="reading-reset">Reiniciar progreso</button></div>
     </section>
   </main>
 
-  <footer><a class="brand" href="#inicio"><span class="brand-mark">R</span><span>Roma<span>Num</span></span></a><p>Hecho con curiosidad para pequeños grandes pensadores.</p><div><button id="sound-toggle" class="text-button" aria-pressed="true">♪ Sonido</button><button id="reset-progress" class="text-button">Reiniciar progreso</button></div></footer>
-  <dialog id="profile-dialog"><form method="dialog"><div class="dialog-head"><div><span class="kicker">¿QUIÉN JUEGA?</span><h2>Elige tu perfil</h2></div><button value="cancel" aria-label="Cerrar">×</button></div><div id="profile-list" class="profile-list"></div><div class="new-profile"><input id="new-profile-name" maxlength="14" placeholder="Nombre del nuevo perfil" aria-label="Nombre del nuevo perfil"><button type="button" class="button primary" id="create-profile">Crear perfil</button></div></form></dialog>
-  <script src="app.js"></script>
+  <footer><button class="brand small" data-go="home"><span>AP</span>Aula Play</button><p>Juegos educativos, sencillos y seguros.</p></footer>
+  <script type="module" src="./js/app.js"></script>
 </body>
 </html>
