@@ -36,7 +36,8 @@
 
     <section class="view module-view reading-module" id="lectura" aria-labelledby="reading-title" hidden>
       <div class="module-header reading"><button class="back" data-go="home">← Aula Play</button><div><span class="pill">APRENDE A LEER</span><h1 id="reading-title">¿Qué ves?</h1><p>Mira el dibujo y toca su palabra.</p></div><div class="reading-stats"><span>✓ <b id="reading-hits">0</b></span><span>🔥 <b id="reading-streak">0</b></span></div></div>
-      <section class="reading-game" aria-label="Juego de lectura"><div class="picture-card" id="reading-picture" role="img"></div><button class="listen-button" id="reading-listen" aria-label="Escuchar la palabra">🔊 Escuchar</button><div class="word-grid" id="reading-choices"></div><div class="reading-feedback" id="reading-feedback" role="status" aria-live="assertive">Elige una palabra</div><button class="primary big" id="reading-next" hidden>Siguiente →</button></section>
+      <div class="reading-level-nav"><span>Elige un nivel</span><div id="reading-levels" aria-label="Niveles de lectura"></div></div>
+      <section class="reading-game" aria-label="Juego de lectura"><div class="reading-round" id="reading-round">Nivel 1 · 0 de 4</div><div class="picture-card" id="reading-picture" role="img"></div><button class="listen-button" id="reading-listen" aria-label="Escuchar la palabra">🔊 Escuchar</button><div class="word-grid" id="reading-choices"></div><div class="reading-feedback" id="reading-feedback" role="status" aria-live="assertive">Elige una palabra</div><button class="primary big" id="reading-next" hidden>Siguiente →</button></section>
       <div class="reading-progress"><span id="reading-attempts">0 intentos</span><button class="secondary" id="reading-reset">Reiniciar progreso</button></div>
     </section>
   </main>
