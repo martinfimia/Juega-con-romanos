@@ -1,26 +1,38 @@
-# RomaNum
+# Aula Play
 
-Aplicación web educativa para aprender números romanos jugando, pensada para niños y niñas de 9 años en adelante.
+Plataforma educativa modular y estática. Incluye dos juegos independientes:
 
-## Incluye
+- **Números romanos** — lecciones, conversión bidireccional, pistas, rachas, reto de 60 segundos, perfiles y juego en grupo.
+- **Aprende a leer** — asociación de diez imágenes con palabras sencillas para niños a partir de 5 años.
 
-- Referencia interactiva de los siete símbolos romanos.
-- Explicación visual de la regla de resta.
-- Práctica de opción múltiple con pistas, rachas y feedback inmediato.
-- Reto de 60 segundos.
-- Progreso persistente en el navegador mediante `localStorage`.
-- Diseño responsive, navegación por teclado y respeto a `prefers-reduced-motion`.
+No necesita servidor, base de datos, registro ni dependencias externas. El progreso de cada módulo se guarda por separado en `localStorage`.
 
-## Uso local
+## Vista previa local
 
-No requiere instalación ni dependencias. Abre `index.html` en un navegador o sirve la carpeta con cualquier servidor estático:
+Desde la raíz del proyecto:
 
 ```bash
 python3 -m http.server 8080
 ```
 
-Después visita `http://localhost:8080`.
+Abre `http://localhost:8080/`. No abras el HTML como `file://`, porque la aplicación utiliza módulos JavaScript nativos.
+
+## Arquitectura
+
+```text
+index.html                 Portada y vistas de los módulos
+styles.css                 Estilos compartidos y adaptables
+js/app.js                  Navegación y arranque
+js/core/storage.js         Persistencia compartida
+js/core/sounds.js          Sonidos y lectura de palabras
+js/data/roman-data.js      Símbolos y conversión romana
+js/data/reading-data.js    Banco de palabras e imágenes
+js/modules/roman.js        Juego de números romanos
+js/modules/reading.js      Juego de iniciación a la lectura
+```
+
+Todos los enlaces y módulos usan rutas relativas, por lo que la aplicación funciona bajo una subcarpeta de GitHub Pages.
 
 ## Publicación
 
-El proyecto es compatible con GitHub Pages. En la configuración del repositorio, selecciona **Deploy from a branch**, la rama `main` y la carpeta raíz.
+El desarrollo de Aula Play se mantiene en la rama `aula-play`. La rama `main` no debe modificarse ni fusionarse sin revisión y aprobación explícitas.
