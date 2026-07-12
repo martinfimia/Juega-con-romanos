@@ -1,6 +1,6 @@
-import{load,save,reset}from'../core/storage.js';
-import{tone,speak}from'../core/sounds.js';
-import{readingWords,readingLevels}from'../data/reading-data.js';
+import{load,save,reset}from'../core/storage.js?v=20260712';
+import{tone,speak}from'../core/sounds.js?v=20260712';
+import{readingWords,readingLevels}from'../data/reading-data.js?v=20260712';
 
 const $=s=>document.querySelector(s);
 let state=load('reading',{hits:0,attempts:0,best:0,completed:0});
