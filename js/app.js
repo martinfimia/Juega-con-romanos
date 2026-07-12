@@ -1,6 +1,6 @@
-import{initRoman}from'./modules/roman.js';
-import{initReading}from'./modules/reading.js';
-import{setSound,isSoundOn}from'./core/sounds.js';
+import{initRoman}from'./modules/roman.js?v=20260712';
+import{initReading}from'./modules/reading.js?v=20260712';
+import{setSound,isSoundOn}from'./core/sounds.js?v=20260712';
 
 const views=[...document.querySelectorAll('.view')];
 const romanSections=['roman-levels','roman-lessons','roman-practice','roman-group','roman-challenge'];
