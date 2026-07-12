@@ -15,4 +15,10 @@ export const readingWords=[
  {word:'pico',art:picoArt,alt:'Un pájaro con el pico grande y amarillo',choices:['pico','palo','moto']}
 ];
 
-export const readingLevels=[['mano','mapa'],['mesa','mono'],['moto','palo'],['pato','pelo'],['pera','pico']];
+export const readingLevels=[
+ {id:1,label:'Nivel 1',desc:'1 imagen, 2 palabras',options:2,strategy:'far',mode:'image'},
+ {id:2,label:'Nivel 2',desc:'1 imagen, 3 palabras',options:3,strategy:'mid',mode:'image'},
+ {id:3,label:'Nivel 3',desc:'1 imagen, 4 palabras',options:4,strategy:'near',mode:'image'},
+ {id:4,label:'Nivel 4',desc:'Escucha y busca la palabra',options:4,strategy:'near',mode:'listen'},
+ {id:5,label:'Nivel 5',desc:'Memoriza y localiza la palabra',options:4,strategy:'near',mode:'flash'}
+];
