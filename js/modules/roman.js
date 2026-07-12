@@ -1,4 +1,4 @@
-import{load,save}from'../core/storage.js?v=20260712';import{tone}from'../core/sounds.js?v=20260712';import{romanSymbols,toRoman,fromRoman}from'../data/roman-data.js?v=20260712';
+import{load,save}from'../core/storage.js?v=20260712b';import{tone}from'../core/sounds.js?v=20260712b';import{romanSymbols,toRoman,fromRoman}from'../data/roman-data.js?v=20260712b';
 const $=s=>document.querySelector(s);const worlds=[
  {name:'I · I, V y X',icon:'🏛️',max:20,titles:['Uno, dos y tres','Conoce la V','IV: uno antes de cinco','De V a VIII','Primer repaso','Conoce la X','IX: uno antes de diez','De X a XIV','Hasta XX','Gran repaso']},
  {name:'II · Camino a L',icon:'🛡️',max:99,titles:['Conoce la L','Las decenas','XL significa 40','Combina I, V, X y L','Repaso hasta 99']},
