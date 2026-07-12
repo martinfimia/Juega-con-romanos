@@ -35,14 +35,13 @@
     </section>
 
     <section class="view module-view reading-module" id="lectura" aria-labelledby="reading-title" hidden>
-      <div class="module-header reading"><button class="back" data-go="home">← Aula Play</button><div><span class="pill">APRENDE A LEER</span><h1 id="reading-title">¿Qué ves?</h1><p>Mira el dibujo y toca su palabra.</p></div><div class="reading-stats"><span>✓ <b id="reading-hits">0</b></span><span>🔥 <b id="reading-streak">0</b></span></div></div>
-      <div class="reading-level-nav"><span>Elige un nivel</span><div id="reading-levels" aria-label="Niveles de lectura"></div></div>
-      <section class="reading-game" aria-label="Juego de lectura"><div class="reading-round" id="reading-round">Nivel 1 · 0 de 4</div><div class="picture-card" id="reading-picture" role="img"></div><button class="listen-button" id="reading-listen" aria-label="Escuchar la palabra">🔊 Escuchar</button><div class="word-grid" id="reading-choices"></div><div class="reading-feedback" id="reading-feedback" role="status" aria-live="assertive">Elige una palabra</div><button class="primary big" id="reading-next" hidden>Siguiente →</button></section>
-      <div class="reading-progress"><span id="reading-attempts">0 intentos</span><button class="secondary" id="reading-reset">Reiniciar progreso</button></div>
+      <div class="reading-menu" id="reading-menu"><button class="back" data-go="home">← Aula Play</button><h1 id="reading-title">Aprendo a Leer 📖</h1><p>Elige un nivel</p><div class="reading-level-list" id="reading-levels" aria-label="Niveles de lectura"></div><small>Los aciertos se guardan en este dispositivo.</small></div>
+      <section class="reading-play" id="reading-play" aria-label="Juego de lectura" hidden><header><button class="reading-icon-btn" id="reading-back" aria-label="Volver a los niveles">←</button><div class="reading-stars">⭐ <span id="reading-stars">0</span></div><button class="reading-icon-btn" id="reading-restart" aria-label="Reiniciar nivel">↺</button></header><div class="reading-stage"><div class="reading-prompt" id="reading-prompt">Toca la palabra de…</div><div class="reading-image-card" id="reading-image" role="img"></div><button class="reading-speak" id="reading-listen" hidden>🔊 Escuchar</button><div class="reading-flash" id="reading-flash" hidden></div><div class="reading-options" id="reading-choices"></div><div class="reading-feedback" id="reading-feedback" role="status" aria-live="assertive"></div></div><footer id="reading-dots"></footer></section>
+      <div class="reading-celebrate" id="reading-celebrate" hidden><div>🎉🌟🎉</div><h2>¡Los has acertado todos!</h2><p id="reading-final-score"></p><div><button class="primary" id="reading-again">Otra vez</button><button class="secondary" id="reading-to-menu">Niveles</button></div></div>
     </section>
   </main>
 
   <footer><button class="brand small" data-go="home"><span>AP</span>Aula Play</button><p>Juegos educativos, sencillos y seguros.</p></footer>
-  <script type="module" src="./js/app.js?v=20260712"></script>
+  <script type="module" src="./js/app.js?v=20260712b"></script>
 </body>
 </html>
